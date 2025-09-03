@@ -1,0 +1,26 @@
+import React from "react";
+import { Route, Routes} from "react-router-dom";
+import Login from './pages/Login'
+import Feed from './pages/Feed'
+import Messages from './pages/Messages'
+import ChatBox from './pages/ChatBox'
+import Connections from "./pages/connections";
+
+
+const App = () => {
+  return (
+  <>
+     <Routes>
+      <Route path='/' element={<Login />}>
+        <Route index element={<Feed/>}/>
+        <Route path='messages' element={<Messages/>}/>
+        <Route path='messages/:userId' element={<ChatBox/>}/>
+        <Route path='connections' element={<Connections/>}/>
+      </Route>
+     </Routes>
+  
+  </>
+  )
+}
+
+export default App;
